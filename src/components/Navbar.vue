@@ -31,8 +31,8 @@ export default defineComponent({
     <a href="" class="z-10 font-londrina-solid text-3xl">VICTOR</a>
 
     <div 
-      class="absolute left-0 max-md:bg-[#FFFFFF80] w-full flex flex-col items-center gap-6 pb-4 md:pb-0 md:static md:flex-row md:justify-end transition-all ease-in-out duration-500 lg:space-x-8"
-      :class="{ 'top-[-500px]': !navButton, 'top-16': navButton }"
+      class="absolute left-0 max-md:bg-[#FFFFFF90] w-full flex flex-col items-center gap-6 pb-4 md:pb-0 md:static md:flex-row md:justify-end transition-all ease-in-out duration-500 lg:space-x-8"
+      :class="{ 'top-[-500px]': !navButton, 'top-[76px]': navButton }"
     >
       <a href="#" 
         v-for="item, index in navItem.navLink" :key="index"
