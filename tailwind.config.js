@@ -5,7 +5,16 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'londrina-solid': ['Londrina Solid'],
+        'quick-sand': ['Quicksand'],
+        'bowlby-one-sc' : ['Bowlby One SC']
+      },
+      colors: {
+        'primary': '#303030'
+      }
+    },
   },
   plugins: [],
 }
