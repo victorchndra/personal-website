@@ -18,7 +18,7 @@ export default defineComponent({
 
 <template>
   <div class=" min-h-screen">
-    <header class=" bg-[#FFFFFF90] px-5 py-5 lg:pt-10 lg:px-16 sticky top-0 backdrop-filter backdrop-blur-sm">
+    <header class=" bg-[#FFFFFF90] px-5 py-5 lg:pt-10 lg:px-32 sticky top-0 backdrop-filter backdrop-blur-sm">
       <Navbar />
     </header>
     <main >
