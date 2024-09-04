@@ -1,14 +1,14 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import Navbar from "./components/Navbar.vue";
-import HomeView from "./pages/HomeView.vue";
-import AboutView from "./pages/AboutView.vue";
+import HomeSection from "./components/HomeSection.vue";
+import AboutSection from "./components/AboutSection.vue";
 
 export default defineComponent({
   components: {
     Navbar,
-    HomeView,
-    AboutView
+    HomeSection,
+    AboutSection
   },
   setup() {
     
@@ -22,8 +22,8 @@ export default defineComponent({
       <Navbar />
     </header>
     <main>
-      <HomeView />
-      <AboutView />
+      <HomeSection />
+      <AboutSection />
       <!-- <router-view /> -->
     </main>
   </div>
