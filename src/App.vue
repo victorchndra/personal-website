@@ -1,14 +1,14 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import Navbar from "./components/Navbar.vue";
-import Home from "./pages/Home.vue";
-import About from "./pages/About.vue";
+import HomeView from "./pages/HomeView.vue";
+import AboutView from "./pages/AboutView.vue";
 
 export default defineComponent({
   components: {
     Navbar,
-    Home,
-    About
+    HomeView,
+    AboutView
   },
   setup() {
     
@@ -21,9 +21,10 @@ export default defineComponent({
     <header class=" bg-[#FFFFFF90] px-5 py-5 lg:pt-10 lg:px-32 sticky top-0 backdrop-filter backdrop-blur-sm">
       <Navbar />
     </header>
-    <main >
-      <Home />
-      <About />
+    <main>
+      <HomeView />
+      <AboutView />
+      <!-- <router-view /> -->
     </main>
   </div>
 </template>
