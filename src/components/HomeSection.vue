@@ -38,7 +38,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <section class="flex justify-center items-center h-[calc(100vh-68px)] lg:h-[calc(100vh-108px)] flex-col gap-5">
+  <section class="flex justify-center items-center h-[calc(100vh-68px)] lg:h-[calc(100vh-108px)] flex-col gap-5 pb-20">
     <p class="text-sm md:text-base lg:text-lg w-72 md:w-full text-center">
       {{ desc }}
     </p>
@@ -54,3 +54,27 @@ export default defineComponent({
     </ul>
   </section>
 </template>
+
+<style scoped>
+.heading-stroke {
+  @apply text-primary;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+}
+
+@media (min-width: 768px) {
+  .heading-stroke {
+    @apply text-primary;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 4px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-stroke {
+    @apply text-primary;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 6px;
+  }
+}
+</style>
