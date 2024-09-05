@@ -17,17 +17,17 @@ export default defineComponent({
     const media: Media[] = [
       {
         label: 'GitHub',
-        url: '',
+        url: 'https://github.com/victorchndra',
         icon: Github,
       },
       {
         label: 'LinkedIn',
-        url: '',
+        url: 'https://linkedin.com/in/victor-chandra-0417582b2',
         icon: LinkedIn,
       },
       {
         label: 'Instagram',
-        url: '',
+        url: 'https://www.instagram.com/victorchndra/',
         icon: Instagram,
       }
     ]
