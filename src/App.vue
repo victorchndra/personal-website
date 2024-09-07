@@ -22,13 +22,14 @@ export default defineComponent({
       <Navbar />
     </header>
     <main>
-      <HomeSection />
-      <AboutSection />
+      <div class=" overflow-y-scroll snap-mandatory snap-y h-[calc(100vh-68px)] lg:h-[calc(100vh-108px)] no-scrollbar">
+        <HomeSection />
+        <AboutSection />
+      </div>
       <!-- <router-view /> -->
     </main>
   </div>
 </template>
 
 <style scoped>
-
 </style>

@@ -10,7 +10,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <section class="h-[calc(100vh-68px)] lg:h-[calc(100vh-108px)] px-5 py-5 flex flex-col gap-5 lg:px-32">
+  <section class="h-[calc(100vh-68px)] lg:h-[calc(100vh-108px)] px-5 py-5 flex flex-col gap-5 lg:px-32 snap-center">
     <div>
       <h1 class="font-bowlby-one-sc text-xl md:text-2xl pb-2">Hello!</h1>
       <p class="text-sm md:text-base">👋 Hello, I am Victor Chandra, a full stack engineer. Based in Indonesia.</p>
