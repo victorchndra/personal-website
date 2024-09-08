@@ -4,6 +4,7 @@ import Media from '../types/Media';
 import Github from '../assets/icons/Github.vue';
 import LinkedIn from '../assets/icons/LinkedIn.vue';
 import Instagram from '../assets/icons/Instagram.vue';
+import { useI18n } from 'vue-i18n';
 
 export default defineComponent({
   name: 'HomeSection',
@@ -13,6 +14,9 @@ export default defineComponent({
     Instagram
   },
   setup() {
+    const { t } = useI18n()
+    console.log('Translated\n', t('homeSection.headCaption')) //success
+
     const desc: string = '👋 Hello, I am Victor Chandra, a full stack engineer. Based in Indonesia'
     const media: Media[] = [
       {
@@ -40,7 +44,7 @@ export default defineComponent({
 <template>
   <section class="flex justify-center items-center h-[calc(100vh-68px)] lg:h-[calc(100vh-108px)] flex-col gap-5 pb-20 snap-center">
     <p class="text-sm md:text-base lg:text-lg w-72 md:w-full text-center">
-      {{ desc }}
+      {{ $t('homeSection.headCaption') }}
     </p>
     <h1 class="font-bowlby-one-sc text-5xl md:text-8xl lg:text-[148px] text-center flex flex-col text-primary">
       <span>SOFTWARE</span>

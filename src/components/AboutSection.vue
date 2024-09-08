@@ -23,6 +23,7 @@ export default defineComponent({
         <li class="text-white px-4 py-1 whitespace-nowrap">Able to work with:</li>
       </ul>
       <div>
+      <p>{{ $t('aboutSection.intro') }}</p>
         <!-- icon -->
       </div>
     </div>
