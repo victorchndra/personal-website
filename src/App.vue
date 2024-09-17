@@ -2,13 +2,13 @@
 import { defineComponent } from "vue";
 import Navbar from "./components/Navbar.vue";
 import HomeSection from "./components/HomeSection.vue";
-import AboutSection from "./components/AboutSection.vue";
+import TechSection from "./components/TechStackSection.vue";
 
 export default defineComponent({
   components: {
     Navbar,
     HomeSection,
-    AboutSection
+    TechSection
   },
   setup() {
     
@@ -24,7 +24,7 @@ export default defineComponent({
     <main>
       <div class=" overflow-y-scroll snap-mandatory snap-y h-[calc(100vh-68px)] lg:h-[calc(100vh-108px)] no-scrollbar">
         <HomeSection />
-        <AboutSection />
+        <TechSection />
       </div>
       <!-- <router-view /> -->
     </main>

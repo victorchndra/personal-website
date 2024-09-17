@@ -14,8 +14,8 @@ export default defineComponent({
     Instagram
   },
   setup() {
-    const { t } = useI18n()
-    console.log('Translated\n', t('homeSection.headCaption')) //success
+    // const { t } = useI18n()
+    // console.log('Translated\n', t('homeSection.headCaption')) //success
 
     const desc: string = '👋 Hello, I am Victor Chandra, a full stack engineer. Based in Indonesia'
     const media: Media[] = [

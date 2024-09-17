@@ -13,7 +13,7 @@ export default defineComponent({
     return {
       navButton: false as boolean,
       navItem: {
-        navLink: ['About', 'Posts', 'Works'] as string[],
+        navLink: ['Tech Stack', 'Posts', 'Works'] as string[],
         downloadBtn: 'Download CV' as string
       }
     }
@@ -36,7 +36,7 @@ export default defineComponent({
     >
       <a href="#" 
         v-for="item, index in navItem.navLink" :key="index"
-        class="hover:text-orange-500">
+        class="hover:text-zinc-500">
         {{ item }}
       </a>
       <div class="flex border rounded-full px-1 py-1 border-primary">

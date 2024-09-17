@@ -1,11 +1,11 @@
 import { createMemoryHistory, createRouter } from "vue-router";
 
 import HomeSection from "../components/HomeSection.vue";
-import AboutSection from "../components/AboutSection.vue";
+import TechStackSection from "../components/TechStackSection.vue";
 
 const routes = [
   { path: '/', component: HomeSection },
-  { path: '/about', component: AboutSection },
+  { path: '/about', component: TechStackSection },
 ]
 
 const router = createRouter({
