@@ -13,7 +13,7 @@ export default defineComponent({
     return {
       navButton: false as boolean,
       navItem: {
-        navLink: ['Tech Stack', 'Posts', 'Works'] as string[],
+        navLink: ['Tech Stack', 'My Post', 'My Work'] as string[],
         downloadBtn: 'Download CV' as string
       }
     }

@@ -3,12 +3,16 @@ import { defineComponent } from "vue";
 import Navbar from "./components/Navbar.vue";
 import HomeSection from "./components/HomeSection.vue";
 import TechSection from "./components/TechStackSection.vue";
+import PostSection from "./components/PostSection.vue";
+import WorkSection from "./components/WorkSection.vue";
 
 export default defineComponent({
   components: {
     Navbar,
     HomeSection,
-    TechSection
+    TechSection,
+    PostSection,
+    WorkSection,
   },
   setup() {
     
@@ -22,9 +26,11 @@ export default defineComponent({
       <Navbar />
     </header>
     <main>
-      <div class=" overflow-y-scroll snap-mandatory snap-y h-[calc(100vh-68px)] lg:h-[calc(100vh-108px)] no-scrollbar">
+      <div class=" overflow-y-scroll snap-mandatory snap-y h-[calc(100vh-76px)] md:h-[calc(100vh-108px)] no-scrollbar">
         <HomeSection />
         <TechSection />
+        <PostSection />
+        <WorkSection />
       </div>
       <!-- <router-view /> -->
     </main>
@@ -32,4 +38,13 @@ export default defineComponent({
 </template>
 
 <style scoped>
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 </style>

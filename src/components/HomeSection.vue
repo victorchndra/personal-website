@@ -42,7 +42,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <section class="flex justify-center items-center h-[calc(100vh-68px)] lg:h-[calc(100vh-108px)] flex-col gap-5 pb-20 snap-center">
+  <section class="flex justify-center items-center h-[calc(100vh-76px)] md:h-[calc(100vh-108px)] flex-col gap-5 pb-20 snap-center">
     <p class="text-sm md:text-base lg:text-lg w-72 md:w-full text-center">
       {{ $t('homeSection.headCaption') }}
     </p>
@@ -52,8 +52,10 @@ export default defineComponent({
     </h1>
     <ul class="flex gap-4 flex-wrap justify-center pt-2">
       <li v-for="item in media" :key="item.label" class="flex gap-1">
-        <component :is="item.icon"></component>
-        <span>{{ item.label }}</span> 
+        <a :href="item.url" target="_blank">
+          <component :is="item.icon"></component>
+          <!-- <span>{{ item.label }}</span> -->
+        </a>
       </li>
     </ul>
   </section>
