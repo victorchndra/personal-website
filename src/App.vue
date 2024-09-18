@@ -29,8 +29,8 @@ export default defineComponent({
       <div class=" overflow-y-scroll snap-mandatory snap-y h-[calc(100vh-76px)] md:h-[calc(100vh-108px)] no-scrollbar">
         <HomeSection />
         <TechSection />
-        <PostSection />
         <WorkSection />
+        <PostSection />
       </div>
       <!-- <router-view /> -->
     </main>

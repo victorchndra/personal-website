@@ -13,7 +13,7 @@ export default defineComponent({
     return {
       navButton: false as boolean,
       navItem: {
-        navLink: ['Tech Stack', 'My Post', 'My Work'] as string[],
+        navLink: ['Expertise', 'Work', 'Blog'] as string[],
         downloadBtn: 'Download CV' as string
       }
     }
@@ -31,7 +31,7 @@ export default defineComponent({
     <a href="" class="z-10 font-londrina-solid text-3xl">VICTOR</a>
 
     <div 
-      class="absolute left-0 max-md:bg-[#FFFFFF90] w-full flex flex-col items-center gap-6 pb-4 md:pb-0 md:static md:flex-row md:justify-end transition-all ease-in-out duration-500 lg:space-x-8"
+      class="absolute left-0 max-md:bg-[#ffffffee] w-full flex flex-col items-center gap-6 pb-4 md:pb-0 md:static md:flex-row md:justify-end transition-all ease-in-out duration-500 lg:space-x-8"
       :class="{ 'top-[-500px]': !navButton, 'top-[76px]': navButton }"
     >
       <a href="#" 

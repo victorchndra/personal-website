@@ -25,7 +25,7 @@ export default defineComponent({
       <div class="flex justify-center sm:justify-start">
         <ul class="flex text-xs px-2 py-2 bg-primary rounded-3xl overflow-x-auto max-w-max no-scrollbar">
           <li class="bg-white px-4 py-1 rounded-full whitespace-nowrap transition-all duration-300 ease-in-out">Working Stack</li>
-          <li class="text-white px-4 py-1 whitespace-nowrap">Personal Stack</li>
+          <li class="text-white px-4 py-1 whitespace-nowrap">Previous Stack</li>
           <li class="text-white px-4 py-1 whitespace-nowrap">Alternative Stack</li>
         </ul>
       </div>

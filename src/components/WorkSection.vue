@@ -63,7 +63,7 @@ export default defineComponent({
           </span>
           <div class="flex flex-col w-fit">
             <p>Full Stack Engineer - Universe Action Limited</p>
-            <span class="flex gap-2 text-zinc-500 text-sm items-center"><MapPin width="1rem" />Kowloon, Hong Kong SAR</span>
+            <span class="flex gap-2 text-zinc-500 text-sm items-center"><MapPin width="1rem" />Kowloon, Hong Kong SAR (Remote)</span>
             <span class="flex gap-2 text-zinc-500 text-sm items-center"><Calendar width="1rem" />Aug 2024 - Present</span>
           </div>
         </div>
