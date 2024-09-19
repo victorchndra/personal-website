@@ -1,13 +1,15 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { Download, Menu, X } from 'lucide-vue-next';
+import { ChevronDown, Download, Languages, Menu, X } from 'lucide-vue-next';
 
 export default defineComponent({
   name: 'Navbar',
   components: {
     Menu,
     Download,
-    X
+    X,
+    Languages,
+    ChevronDown
   },
   data() {
     return {
@@ -39,10 +41,21 @@ export default defineComponent({
         class="hover:text-zinc-500">
         {{ item }}
       </a>
-      <div class="flex border rounded-full px-1 py-1 border-primary">
+      <!-- <div class="flex border rounded-full px-1 py-1 border-primary">
         <button class="px-2 bg-primary rounded-full text-white hover:bg-zinc-700">EN</button>
         <button class="px-2 text-[#30303080]">ID</button>
+      </div> -->
+      <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="hover:bg-zinc-300 py-3 px-4 rounded-lg flex gap-1">
+          <Languages class="w-4 text-primary"/>
+          <ChevronDown class="w-4 text-zinc-500" />
+        </div>
+        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-40 p-2 shadow">
+          <li><a><span class="text-xs border rounded-full px-2 py-1">EN</span>English</a></li>
+          <li><a><span class="text-xs border rounded-full px-2 py-1">CH</span>中文</a></li>
+        </ul>
       </div>
+      
       <button class=" px-4 py-3 bg-primary text-white rounded-lg flex justify-center items-center gap-1 hover:bg-zinc-700">
         <Download :size="18" /> {{ navItem.downloadBtn }}
       </button>
@@ -60,3 +73,9 @@ export default defineComponent({
     />
   </nav>
 </template>
+
+<style scoped>
+.menu li > *:not(ul):not(.menu-title):not(details):active{
+  @apply bg-primary;
+}
+</style>

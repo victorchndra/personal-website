@@ -1,35 +1,64 @@
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
+import { defineComponent, onMounted, ref } from 'vue'
 import { myStacks } from '../data/stacks';
-// import { useMediaQuery } from '@vueuse/core';
 
 export default defineComponent({
   name: 'TechStackSection',
   setup() {
-    // const isSmallScreen = useMediaQuery('(max-width:640px)')
     const stackList = myStacks
 
-    return { stackList }
+    const orderList = [
+      {label: 'Working Stack', isActive: true, tag: 'working'}, 
+      {label: 'Previous Stack', isActive: false, tag: 'previous'},
+      {label: 'Alternative Stack', isActive: false, tag: 'alternative'},
+    ]
+
+    // Tampilkan data stackList dimana tag pada myStacks[].tag[] === tag pada orderList
+    onMounted(() => {
+      // myStacks.forEach(key => {
+      //   console.log(key)
+      // })
+      const stackListTest = myStacks
+      console.log(stackListTest)
+    })
+
+    const indicatorPosition = ref(0)
+
+    const handleOrderSelected = (orderBy:any) => {
+      orderList.forEach((item, index) => {
+        item.isActive = false
+        if(item === orderBy) {
+          indicatorPosition.value = index;
+        }
+      })
+      orderBy.isActive = true
+    }
+
+    return { 
+      stackList,
+      orderList,
+      indicatorPosition,
+      handleOrderSelected
+    }
   },
 })
 </script>
 
 <template>
   <section class="h-[calc(100vh-76px)] md:h-[calc(100vh-108px)] px-5 py-5 flex flex-col gap-5 lg:px-32 snap-center">
-    <!-- <div>
-      <h1 class="font-bowlby-one-sc text-xl md:text-2xl pb-2">Hello!</h1>
-      <p class="text-sm md:text-base">👋 Hello, I am Victor Chandra, a full stack engineer. Based in Indonesia.</p>
-    </div> -->
     <div>
       <h1 class="font-bowlby-one-sc text-xl md:text-2xl pb-2">TECH STACK.</h1>
       <div class="flex justify-center sm:justify-start">
         <ul class="flex text-xs px-2 py-2 bg-primary rounded-3xl overflow-x-auto max-w-max no-scrollbar">
-          <li class="bg-white px-4 py-1 rounded-full whitespace-nowrap transition-all duration-300 ease-in-out">Working Stack</li>
-          <li class="text-white px-4 py-1 whitespace-nowrap">Previous Stack</li>
-          <li class="text-white px-4 py-1 whitespace-nowrap">Alternative Stack</li>
+          <li v-for="orderBy in orderList" :key="orderBy.label" class="text-white px-4 py-1 whitespace-nowrap relative hover:cursor-pointer" @click="handleOrderSelected(orderBy)" ref="listItem">
+            <span class="z-10 relative" :class="orderBy.isActive && 'tabActive'">{{ orderBy.label }}</span>
+            <div class="indicator" v-if="orderBy.isActive" :style="{ transform: `translateX(${indicatorPosition}px)`}"></div>
+          </li>
         </ul>
       </div>
-      <div class="mt-4 grid grid-cols-3 gap-2 justify-between sm:flex sm:flex-wrap sm:justify-start lg:gap-6 overflow-y-auto sm-h-optimized h-3/5 sm:h-fit no-scrollbar">
+
+      <!-- Icon Section -->
+      <div class="mt-4 grid grid-cols-3 gap-2 justify-between sm:flex sm:flex-wrap sm:justify-start lg:gap-6 overflow-y-auto h-3/5 sm:h-fit no-scrollbar sm-h-optimized lg-h-optimized">
         <template v-for="stacks in stackList" :key="stacks">
           <div v-for="stack in stacks" :key="stack.name" class="bg-white place-self-center p-3 max-w-fit rounded-xl border flex flex-col items-center gap-2">
             <component :is="stack.iconLogo" :width="stack.width" :height="stack.height"/>
@@ -52,26 +81,50 @@ export default defineComponent({
   scrollbar-width: none;  /* Firefox */
 }
 
+.indicator {
+  @apply absolute w-full h-full bg-white top-0 left-0 rounded-full transition-all duration-500 ease-in-out;
+}
+
+.tabActive {
+  @apply text-primary;
+}
+
 @media (max-width: 639px) {
   .sm-h-optimized {
-    height: 50%;
+    height: 420px;
   }
-  
+
   @media (min-height: 680px) {
     .sm-h-optimized {
-      height: 60%;
+      height: 450px;
     }
   }
   
-  @media (min-height: 750px) {
+  @media (min-height: 740px) {
     .sm-h-optimized {
-      height: 70%;
+      height: 520px;
     }
   }
   
-  @media (min-height: 850px) {
+  @media (min-height: 844px) {
     .sm-h-optimized {
-      height: 80%;
+      height: 630px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  @media (min-height: 680px) {
+    .lg-h-optimized {
+      height: fit-content;
+      max-height: 450px;
+    }
+  }
+
+  @media (min-height: 1024px) {
+    .lg-h-optimized {
+      height: fit-content;
+      max-height: none;
     }
   }
 }

@@ -1,12 +1,18 @@
+import Flutter from "../assets/icons/Flutter.vue";
+import Inertia from "../assets/icons/Inertia.vue";
 import Java from "../assets/icons/Java.vue";
 import JavaScript from "../assets/icons/JavaScript.vue";
+import Laravel from "../assets/icons/Laravel.vue";
 import MongoDB from "../assets/icons/MongoDB.vue";
 import MyBatis from "../assets/icons/MyBatis.vue";
 import MySQL from "../assets/icons/MySQL.vue";
+import Next from "../assets/icons/Next.vue";
 import Nuxt from "../assets/icons/Nuxt.vue";
 import Pinia from "../assets/icons/Pinia.vue";
 import PostgreSQL from "../assets/icons/PostgreSQL.vue";
+import React from "../assets/icons/React.vue";
 import Redis from "../assets/icons/Redis.vue";
+import Redux from "../assets/icons/Redux.vue";
 import RocketMQ from "../assets/icons/RocketMQ.vue";
 import Spring from "../assets/icons/Spring.vue";
 import Tailwind from "../assets/icons/Tailwind.vue";
@@ -22,8 +28,7 @@ const frontEndStacks = [
     caption: 'JavaScript',
     width: '64px',
     height: '64px',
-    tag: 'current',
-    category: 'frontend',
+    tag: ['working', 'previous'],
   },
   {
     iconLogo: TypeScript,
@@ -31,8 +36,7 @@ const frontEndStacks = [
     caption: 'TypeScript',
     width: '64px',
     height: '64px',
-    tag: 'current',
-    category: 'frontend',
+    tag: ['working', 'previous'],
   },
   {
     iconLogo: Vue,
@@ -40,8 +44,7 @@ const frontEndStacks = [
     caption: 'Vue',
     width: '64px',
     height: '64px',
-    tag: 'current',
-    category: 'frontend',
+    tag: ['working'],
   },
   {
     iconLogo: Pinia,
@@ -49,8 +52,7 @@ const frontEndStacks = [
     caption: 'Pinia',
     width: '64px',
     height: '64px',
-    tag: 'current',
-    category: 'frontend',
+    tag: ['working'],
   },
   {
     iconLogo: Vuex,
@@ -58,8 +60,7 @@ const frontEndStacks = [
     caption: 'Vuex',
     width: '64px',
     height: '64px',
-    tag: 'current',
-    category: 'frontend',
+    tag: ['working'],
   },
   {
     iconLogo: Nuxt,
@@ -67,8 +68,7 @@ const frontEndStacks = [
     caption: 'NuxtJS',
     width: '64px',
     height: '64px',
-    tag: 'current',
-    category: 'frontend',
+    tag: ['working'],
   },
   {
     iconLogo: Tailwind,
@@ -76,8 +76,7 @@ const frontEndStacks = [
     caption: 'TailwindCSS',
     width: '64px',
     height: '64px',
-    tag: 'current',
-    category: 'frontend',
+    tag: ['previous'],
   },
   {
     iconLogo: Websocket,
@@ -85,8 +84,47 @@ const frontEndStacks = [
     caption: 'Websocket',
     width: '64px',
     height: '64px',
-    tag: 'current',
-    category: 'frontend',
+    tag: ['working'],
+  },
+  {
+    iconLogo: React,
+    name: 'React',
+    caption: 'React',
+    width: '64px',
+    height: '64px',
+    tag: ['previous'],
+  },
+  {
+    iconLogo: Redux,
+    name: 'Redux',
+    caption: 'Redux',
+    width: '64px',
+    height: '64px',
+    tag: ['previous'],
+  },
+  {
+    iconLogo: Next,
+    name: 'NextJS',
+    caption: 'NextJS',
+    width: '64px',
+    height: '64px',
+    tag: ['previous'],
+  },
+  {
+    iconLogo: Inertia,
+    name: 'InertiaJS',
+    caption: 'InertiaJS',
+    width: '64px',
+    height: '64px',
+    tag: ['previous'],
+  },
+  {
+    iconLogo: Flutter,
+    name: 'Flutter',
+    caption: 'Flutter',
+    width: '64px',
+    height: '64px',
+    tag: ['alternative'],
   },
 ]
 
@@ -97,8 +135,7 @@ const backEndStacks = [
     caption: 'Java',
     width: '64px',
     height: '64px',
-    tag: 'current',
-    category: 'backend',
+    tag: ['working'],
   },
   {
     iconLogo: Spring,
@@ -106,8 +143,7 @@ const backEndStacks = [
     caption: 'Spring',
     width: '64px',
     height: '64px',
-    tag: 'current',
-    category: 'backend',
+    tag: ['working'],
   },
   {
     iconLogo: MyBatis,
@@ -115,8 +151,7 @@ const backEndStacks = [
     caption: 'MyBatis',
     width: '64px',
     height: '64px',
-    tag: 'current',
-    category: 'backend',
+    tag: ['working'],
   },
   {
     iconLogo: RocketMQ,
@@ -124,8 +159,7 @@ const backEndStacks = [
     caption: 'RocketMQ',
     width: '64px',
     height: '64px',
-    tag: 'current',
-    category: 'backend',
+    tag: ['working'],
   },
   {
     iconLogo: Redis,
@@ -133,8 +167,7 @@ const backEndStacks = [
     caption: 'Redis',
     width: '64px',
     height: '64px',
-    tag: 'current',
-    category: 'backend',
+    tag: ['working'],
   },
   {
     iconLogo: MySQL,
@@ -142,8 +175,7 @@ const backEndStacks = [
     caption: 'MySQL',
     width: '64px',
     height: '64px',
-    tag: 'current',
-    category: 'backend',
+    tag: ['working', 'previous'],
   },
   {
     iconLogo: PostgreSQL,
@@ -151,8 +183,7 @@ const backEndStacks = [
     caption: 'PostgreSQL',
     width: '64px',
     height: '64px',
-    tag: 'current',
-    category: 'backend',
+    tag: ['working'],
   },
   {
     iconLogo: MongoDB,
@@ -160,8 +191,15 @@ const backEndStacks = [
     caption: 'MongoDB',
     width: '64px',
     height: '64px',
-    tag: 'current',
-    category: 'backend',
+    tag: ['working'],
+  },
+  {
+    iconLogo: Laravel,
+    name: 'Laravel',
+    caption: 'Laravel',
+    width: '64px',
+    height: '64px',
+    tag: ['previous'],
   },
 ]
 
