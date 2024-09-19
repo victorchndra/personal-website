@@ -3,7 +3,7 @@ import { defineComponent } from "vue";
 import Navbar from "./components/Navbar.vue";
 import HomeSection from "./components/HomeSection.vue";
 import TechSection from "./components/TechStackSection.vue";
-import PostSection from "./components/PostSection.vue";
+import BlogSection from "./components/BlogSection.vue";
 import WorkSection from "./components/WorkSection.vue";
 
 export default defineComponent({
@@ -11,7 +11,7 @@ export default defineComponent({
     Navbar,
     HomeSection,
     TechSection,
-    PostSection,
+    BlogSection,
     WorkSection,
   },
   setup() {
@@ -30,7 +30,7 @@ export default defineComponent({
         <HomeSection />
         <TechSection />
         <WorkSection />
-        <PostSection />
+        <BlogSection />
       </div>
       <!-- <router-view /> -->
     </main>
