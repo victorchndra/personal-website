@@ -37,7 +37,7 @@ const frontEndStacks: TechStack[] = [
     caption: 'TypeScript',
     width: '64px',
     height: '64px',
-    tag: ['working', 'previous'],
+    tag: ['working'],
   },
   {
     iconLogo: Vue,
@@ -69,7 +69,7 @@ const frontEndStacks: TechStack[] = [
     caption: 'NuxtJS',
     width: '64px',
     height: '64px',
-    tag: ['working'],
+    tag: ['alternative'],
   },
   {
     iconLogo: Tailwind,
@@ -101,7 +101,7 @@ const frontEndStacks: TechStack[] = [
     caption: 'Redux',
     width: '64px',
     height: '64px',
-    tag: ['previous'],
+    tag: ['alternative'],
   },
   {
     iconLogo: Next,
@@ -109,7 +109,7 @@ const frontEndStacks: TechStack[] = [
     caption: 'NextJS',
     width: '64px',
     height: '64px',
-    tag: ['previous'],
+    tag: ['alternative'],
   },
   {
     iconLogo: Inertia,
