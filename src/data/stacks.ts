@@ -20,8 +20,9 @@ import TypeScript from "../assets/icons/TypeScript.vue";
 import Vue from "../assets/icons/Vue.vue";
 import Vuex from "../assets/icons/Vuex.vue";
 import Websocket from "../assets/icons/Websocket.vue";
+import { MyTechStack, TechStack } from "../types/TechStack";
 
-const frontEndStacks = [
+const frontEndStacks: TechStack[] = [
   {
     iconLogo: JavaScript,
     name: 'JavaScript',
@@ -128,7 +129,7 @@ const frontEndStacks = [
   },
 ]
 
-const backEndStacks = [
+const backEndStacks: TechStack[] = [
   {
     iconLogo: Java,
     name: 'Java',
@@ -203,7 +204,7 @@ const backEndStacks = [
   },
 ]
 
-export const myStacks = {
-  frontend: {...frontEndStacks},
-  backend: {...backEndStacks}
+export const myStacks: MyTechStack = {
+  frontend: frontEndStacks,
+  backend: backEndStacks
 }

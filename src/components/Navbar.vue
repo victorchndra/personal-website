@@ -36,7 +36,7 @@ export default defineComponent({
       class="absolute left-0 max-md:bg-[#ffffffee] w-full flex flex-col items-center gap-6 pb-4 md:pb-0 md:static md:flex-row md:justify-end transition-all ease-in-out duration-500 lg:space-x-8"
       :class="{ 'top-[-500px]': !navButton, 'top-[76px]': navButton }"
     >
-      <a href="#" 
+      <a href="" 
         v-for="item, index in navItem.navLink" :key="index"
         class="hover:text-zinc-500">
         {{ item }}
