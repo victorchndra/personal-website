@@ -1,6 +1,8 @@
 <script lang="ts">
 import { Calendar, MapPin } from 'lucide-vue-next';
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted } from 'vue'
+import { experiences } from '../data/experiences';
+import moment from 'moment';
 
 export default defineComponent({
   name: 'WorkSection',
@@ -8,6 +10,19 @@ export default defineComponent({
     MapPin,
     Calendar
   },
+  setup() {
+
+    // onMounted(() => {
+    //   experiences.forEach((exp) => {
+    //     console.log(moment(exp.quit_date).format('MMM YYYY'))
+    //   })
+    // })
+
+    return {
+      experiences,
+      moment
+    }
+  }
 })
 </script>
 
@@ -56,21 +71,28 @@ export default defineComponent({
       <!-- section 2 -->
       <div class="w-full md:w-1/2 flex flex-col items-center ">
         <h1 class="font-bowlby-one-sc text-lg md:text-xl pb-4">Work Experience</h1>
-        <div class="flex flex-col w-5/6 min-w-72 max-w-80 md:max-w-96 ">
+
+        <div v-for="exp, index in experiences" :key="index" class="flex flex-col w-5/6 min-w-72 max-w-80 md:max-w-96 ">
           <div class="flex gap-3">
             <span class="relative flex h-3 w-3">
-              <span class="animate-ping absolute top-[6px] inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
-              <span class="relative inline-flex top-[6px] rounded-full h-3 w-3 bg-yellow-500"></span>
+              <span v-if="exp.is_active" class="animate-ping absolute top-[6px] inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+              <span class="relative inline-flex top-[6px] rounded-full h-3 w-3" :class="exp.is_active ? 'bg-yellow-500' : 'bg-zinc-400'"></span>
             </span>
             <div class="flex flex-col w-fit">
-              <p>Full Stack Engineer - Universe Action Limited</p>
-              <span class="flex gap-2 text-zinc-500 text-sm items-center"><MapPin width="1rem" />Kowloon, Hong Kong SAR (Remote)</span>
-              <span class="flex gap-2 text-zinc-500 text-sm items-center"><Calendar width="1rem" />Aug 2024 - Present</span>
+              <p>{{ exp.role }} - {{ exp.company }}</p>
+              <span class="flex gap-2 text-zinc-500 text-sm items-center">
+                <MapPin width="1rem" />
+                {{ exp.location }}
+                <span v-if="exp.job_type !== 'self-employed'" class="capitalize">({{ exp.job_type }})</span>
+              </span>
+              <span class="flex gap-2 text-zinc-500 text-sm items-center"><Calendar width="1rem" />
+                {{ moment(exp.joined_date).format('MMM YYYY') }} - {{ exp.quit_date ? moment(exp.quit_date).format('MMM YYYY') : 'Present'}}
+              </span>
             </div>
           </div>
           <hr class="w-full h-px bg-gray-200 border-0 my-2">
         </div>
-        <div class="flex flex-col w-5/6 min-w-72 max-w-80 md:max-w-96 ">
+        <!-- <div class="flex flex-col w-5/6 min-w-72 max-w-80 md:max-w-96 ">
           <div class="flex gap-3">
             <span class="relative flex h-3 w-3">
               <span class="relative inline-flex top-[6px] rounded-full h-3 w-3 bg-zinc-400"></span>
@@ -81,8 +103,7 @@ export default defineComponent({
               <span class="flex gap-2 text-zinc-500 text-sm items-center"><Calendar width="1rem" />Mar 2024 - Aug 2024</span>
             </div>
           </div>
-          <!-- <hr class="w-full h-px bg-gray-200 border-0 my-2"> -->
-        </div>
+        </div> -->
       </div>
     </div>
   </section>

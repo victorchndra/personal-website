@@ -14,13 +14,7 @@ export default defineComponent({
       {label: 'Alternative Stack', isActive: false, tag: 'alternative'},
     ])
 
-    // #1 : Show stackList data where tag in myStacks[].tag[] equals to tag in orderList
-    // #2 : watch orderList.isActive. if the data changed then data within stachList will be adjusted
-    // #3 : stackList store the updated data from myStack
-    // #4 : apply best practice of data structure
-
     watchEffect(() => {
-
       // if stackList.value contains data, then remove the data
       if(stackList.value.length > 0) {
         Object.keys(stackList.value).forEach(() => {
@@ -84,12 +78,10 @@ export default defineComponent({
 
       <!-- Icon Section -->
       <div class="mt-4 grid grid-cols-3 gap-2 justify-between sm:flex sm:flex-wrap sm:justify-start lg:gap-6 overflow-y-auto h-3/5 sm:h-fit no-scrollbar sm-h-optimized lg-h-optimized">
-        <!-- <template v-for="stacks in stackList" :key="stacks"> -->
-          <div v-for="stack in stackList" :key="stack.name" class="bg-white place-self-center p-3 max-w-fit rounded-xl border flex flex-col items-center gap-2">
-            <component :is="stack.iconLogo" :width="stack.width" :height="stack.height"/>
-            <span v-text="stack.caption" class="text-xs mt-1"></span>
-          </div>
-        <!-- </template> -->
+        <div v-for="stack in stackList" :key="stack.name" class="bg-white place-self-center p-3 max-w-fit rounded-xl border flex flex-col items-center gap-2">
+          <component :is="stack.iconLogo" :width="stack.width" :height="stack.height"/>
+          <span v-text="stack.caption" class="text-xs mt-1"></span>
+        </div>
       </div>
     </div>
   </section>
@@ -112,24 +104,28 @@ export default defineComponent({
 
 @media (max-width: 639px) {
   .sm-h-optimized {
-    height: 420px;
+    height: fit-content;
+    max-height: 420px;
   }
 
   @media (min-height: 680px) {
     .sm-h-optimized {
-      height: 450px;
+      height: fit-content;
+      max-height: 450px;
     }
   }
   
   @media (min-height: 740px) {
     .sm-h-optimized {
-      height: 520px;
+      height: fit-content;
+      max-height: 520px;
     }
   }
   
   @media (min-height: 844px) {
     .sm-h-optimized {
-      height: 630px;
+      height: fit-content;
+      max-height: 630px;
     }
   }
 }
