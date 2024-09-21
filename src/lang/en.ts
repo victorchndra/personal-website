@@ -3,6 +3,6 @@ export default {
     base: 'Personal Blog'
   },
   homeSection: {
-    headCaption: '👋 Hello, I am Victor Chandra, a full stack engineer. Based in Indonesia'
+    headCaption: '👋 Hello, I am Victor Chandra, a full stack developer. Based in Indonesia'
   },
 }

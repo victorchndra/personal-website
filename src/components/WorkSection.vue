@@ -3,6 +3,7 @@ import { Calendar, MapPin } from 'lucide-vue-next';
 import { defineComponent, onMounted } from 'vue'
 import { experiences } from '../data/experiences';
 import moment from 'moment';
+import { projects } from '../data/projects';
 
 export default defineComponent({
   name: 'WorkSection',
@@ -20,7 +21,8 @@ export default defineComponent({
 
     return {
       experiences,
-      moment
+      projects,
+      moment,
     }
   }
 })
@@ -35,15 +37,17 @@ export default defineComponent({
         <h1 class="font-bowlby-one-sc text-lg md:text-xl pb-4">Highlighted Projects</h1>
         <ul class="flex flex-col space-y-2 lg:space-y-4 overflow-y-auto h-52 no-scrollbar md:h-[500px]">
           
-          <a href="" class="border rounded-xl min-h-24 px-6 py-4 w-80 lg:w-96 flex flex-col hover:cursor-pointer hover:shadow-md transition-all duration-200 ease-in-out">
-            <div class="flex justify-between items-center hover:text-zinc-500">
-              <h2 class="font-bold uppercase text-sm lg:text-base">Project 1</h2>
-              <span>»</span>
-            </div>
-            <p class="text-sm lg:text-base text-zinc-600">this is description for project 1.</p>
-          </a>
+          <li v-for="project in projects" :key="project.title">
+            <a :href="project.link" class="border rounded-xl min-h-24 px-6 py-4 w-80 lg:w-96 flex flex-col hover:cursor-pointer hover:shadow-md transition-all duration-200 ease-in-out" target="_blank">
+              <div class="flex justify-between items-center hover:text-zinc-500">
+                <h2 class="font-bold uppercase text-sm lg:text-base">{{ project.title }}</h2>
+                <span>»</span>
+              </div>
+              <p class="text-sm lg:text-base text-zinc-600">{{ project.desc }}.</p>
+            </a>
+          </li>
 
-          <a href="" class="border rounded-xl min-h-24 px-6 py-4 w-80 lg:w-96 flex flex-col hover:cursor-pointer hover:shadow-md transition-all duration-200 ease-in-out">
+          <!-- <a href="" class="border rounded-xl min-h-24 px-6 py-4 w-80 lg:w-96 flex flex-col hover:cursor-pointer hover:shadow-md transition-all duration-200 ease-in-out">
             <div class="flex justify-between items-center hover:text-zinc-500">
               <h2 class="font-bold uppercase text-sm lg:text-base">Project 2</h2>
               <span>»</span>
@@ -58,20 +62,20 @@ export default defineComponent({
             </div>
             <p class="text-sm lg:text-base text-zinc-600">this is description for project 3.</p>
           </a>
+
           <a href="" class="border rounded-xl min-h-24 px-6 py-4 w-80 lg:w-96 flex flex-col hover:cursor-pointer hover:shadow-md transition-all duration-200 ease-in-out">
             <div class="flex justify-between items-center hover:text-zinc-500">
               <h2 class="font-bold uppercase text-sm lg:text-base">Project 4</h2>
               <span>»</span>
             </div>
             <p class="text-sm lg:text-base text-zinc-600">this is description for project 4.</p>
-          </a>
+          </a> -->
         </ul>
       </div>
 
       <!-- section 2 -->
       <div class="w-full md:w-1/2 flex flex-col items-center ">
         <h1 class="font-bowlby-one-sc text-lg md:text-xl pb-4">Work Experience</h1>
-
         <div v-for="exp, index in experiences" :key="index" class="flex flex-col w-5/6 min-w-72 max-w-80 md:max-w-96 ">
           <div class="flex gap-3">
             <span class="relative flex h-3 w-3">
@@ -90,20 +94,8 @@ export default defineComponent({
               </span>
             </div>
           </div>
-          <hr class="w-full h-px bg-gray-200 border-0 my-2">
+          <hr v-if="index !== (experiences.length-1)" class="w-full h-px bg-gray-200 border-0 my-2">
         </div>
-        <!-- <div class="flex flex-col w-5/6 min-w-72 max-w-80 md:max-w-96 ">
-          <div class="flex gap-3">
-            <span class="relative flex h-3 w-3">
-              <span class="relative inline-flex top-[6px] rounded-full h-3 w-3 bg-zinc-400"></span>
-            </span>
-            <div class="flex flex-col w-fit">
-              <p>Full Stack Developer - Freelance</p>
-              <span class="flex gap-2 text-zinc-500 text-sm items-center"><MapPin width="1rem" />Riau, Indonesia</span>
-              <span class="flex gap-2 text-zinc-500 text-sm items-center"><Calendar width="1rem" />Mar 2024 - Aug 2024</span>
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
   </section>

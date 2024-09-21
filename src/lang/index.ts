@@ -1,20 +1,20 @@
 import { createI18n } from "vue-i18n";
 import enLang from './en'
-import idLang from './id'
+import chLang from './ch'
 
 const messages = {
   en: {
     ...enLang
   },
-  id: {
-    ...idLang
+  ch: {
+    ...chLang
   }
 }
 
 const i18n = createI18n({
   legacy: false,
   locale: 'en',
-  fallbackLocale: 'id',
+  fallbackLocale: 'ch',
   messages
 })
 

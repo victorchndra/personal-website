@@ -18,5 +18,5 @@ export const experiences: Experience[] = [
     joined_date: new Date(2024, 4),
     quit_date: new Date(2024, 7),
     is_active: false
-  }
+  },
 ]
