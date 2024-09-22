@@ -9,9 +9,9 @@ export default defineComponent({
     const stackList = shallowRef([])
 
     const orderList = ref([
-      {label: 'Working Stack', isActive: true, tag: 'working'}, 
-      {label: 'Previous Stack', isActive: false, tag: 'previous'},
-      {label: 'Alternative Stack', isActive: false, tag: 'alternative'},
+      {label: 'techSection.workingStack', isActive: true, tag: 'working'}, 
+      {label: 'techSection.previousStack', isActive: false, tag: 'previous'},
+      {label: 'techSection.alternativeStack', isActive: false, tag: 'alternative'},
       // {label: 'Web3 Stack', isActive: false, tag: 'web3'},
     ])
 
@@ -67,11 +67,12 @@ export default defineComponent({
 <template>
   <section id="expertise" class="h-[calc(100vh-76px)] md:h-[calc(100vh-108px)] px-5 py-5 flex flex-col gap-5 lg:px-32 snap-center">
     <div>
+      <!-- <h1 class="font-bowlby-one-sc text-xl md:text-2xl pb-2">{{ $t('techSection.techStack') }}.</h1> -->
       <h1 class="font-bowlby-one-sc text-xl md:text-2xl pb-2">TECH STACK.</h1>
       <div class="flex justify-center sm:justify-start">
         <ul class="flex text-xs px-2 py-2 bg-primary rounded-3xl overflow-x-auto max-w-max no-scrollbar">
           <li v-for="orderBy in orderList" :key="orderBy.label" class="text-white px-4 py-1 whitespace-nowrap relative hover:cursor-pointer" @click="handleOrderSelected(orderBy)" ref="listItem">
-            <span class="z-10 relative" :class="orderBy.isActive && 'text-primary'">{{ orderBy.label }}</span>
+            <span class="z-[1] relative" :class="orderBy.isActive && 'text-primary'">{{ $t(orderBy.label) }}</span>
             <div class="indicator" v-if="orderBy.isActive" :style="{ transform: `translateX(${indicatorPosition}px)`}"></div>
           </li>
         </ul>
@@ -79,7 +80,7 @@ export default defineComponent({
 
       <!-- Icon Section -->
       <div class="mt-4 grid grid-cols-3 gap-2 justify-between sm:flex sm:flex-wrap sm:justify-start lg:gap-6 overflow-y-auto h-3/5 sm:h-fit no-scrollbar sm-h-optimized lg-h-optimized">
-        <div v-for="stack in stackList" :key="stack.name" class="bg-white place-self-center p-3 max-w-fit rounded-xl border flex flex-col items-center gap-2">
+        <div v-for="stack in stackList" :key="stack.name" class="bg-white place-self-center p-3 max-w-fit rounded-xl border flex flex-col items-center gap-2 hover:shadow-lg cursor-default transition-all">
           <component :is="stack.iconLogo" :width="stack.width" :height="stack.height"/>
           <span v-text="stack.caption" class="text-xs mt-1"></span>
         </div>
@@ -107,12 +108,14 @@ export default defineComponent({
   .sm-h-optimized {
     height: fit-content;
     max-height: 420px;
+    padding-bottom: 1.5rem;
   }
 
   @media (min-height: 680px) {
     .sm-h-optimized {
       height: fit-content;
       max-height: 450px;
+      padding-bottom: 1.5rem;
     }
   }
   
@@ -120,6 +123,7 @@ export default defineComponent({
     .sm-h-optimized {
       height: fit-content;
       max-height: 520px;
+      padding-bottom: 1.5rem;
     }
   }
   
@@ -127,6 +131,7 @@ export default defineComponent({
     .sm-h-optimized {
       height: fit-content;
       max-height: 630px;
+      padding-bottom: 1.5rem;
     }
   }
 }
@@ -136,6 +141,7 @@ export default defineComponent({
     .lg-h-optimized {
       height: fit-content;
       max-height: 450px;
+      padding-bottom: 1.5rem;
     }
   }
 
@@ -143,6 +149,7 @@ export default defineComponent({
     .lg-h-optimized {
       height: fit-content;
       max-height: none;
+      padding-bottom: 1.5rem;
     }
   }
 }

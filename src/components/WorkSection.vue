@@ -29,7 +29,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <section id="work" class="h-[calc(100vh-76px)] md:h-[calc(100vh-108px)] px-5 py-5 flex flex-col gap-5 lg:px-32 snap-center items-center lg:justify-center">
+  <section id="work" class="h-[calc(100vh-76px)] md:h-[calc(100vh-108px)] px-5 py-5 flex flex-col gap-5 lg:px-32 snap-center items-center md:justify-center">
     <div class="flex flex-wrap w-full max-w-[1024px] lg:pb-20">
 
       <!-- section 1 -->

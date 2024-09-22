@@ -1,6 +1,7 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref, watchEffect } from 'vue'
 import { ChevronDown, Download, Languages, Menu, X } from 'lucide-vue-next';
+import { useI18n } from 'vue-i18n';
 
 export default defineComponent({
   name: 'Navbar',
@@ -11,31 +12,51 @@ export default defineComponent({
     Languages,
     ChevronDown
   },
-  data() {
-    return {
-      navButton: false as boolean,
-      navItem: {
-        navLink: [
-          {
-            label: 'Expertise',
-            url: '#expertise',
-          },
-          {
-            label: 'Work',
-            url: '#work',
-          },
-          {
-            label: 'Blog',
-            url: '#blog'
-          }
-        ],
-        downloadBtn: 'Download CV' as string
-      }
+  setup() {
+    const { locale } = useI18n();
+    const { t } = useI18n()
+
+    const setLanguage = (lang:any) => {
+      locale.value = lang
+      localStorage.setItem('lang', lang)
     }
-  },
-  methods: {
-    handleNavButton(): void {
-      this.navButton = !this.navButton
+
+    const navLink = [
+      {
+        label: 'navbar.expertise',
+        url: '#expertise',
+      },
+      {
+        label: 'navbar.work',
+        url: '#work',
+      },
+      {
+        label: 'navbar.blog',
+        url: '#blog'
+      }
+    ]
+
+    const downloadBtn = 'navbar.downloadCV'
+
+    const navButton = ref(false)
+    
+    const handleNavButton = () => {
+      navButton.value = !navButton.value
+    }
+    
+    watchEffect(() => {
+      const storedLang = localStorage.getItem('lang');
+      if (storedLang) {
+        locale.value = storedLang;
+      }
+    });
+
+    return {
+      setLanguage,
+      navLink,
+      downloadBtn,
+      navButton,
+      handleNavButton
     }
   }
 })
@@ -50,9 +71,9 @@ export default defineComponent({
       :class="{ 'top-[-500px]': !navButton, 'top-[76px]': navButton }"
     >
       <a :href="item.url"
-        v-for="item, index in navItem.navLink" :key="index"
+        v-for="item, index in navLink" :key="index"
         class="hover:text-zinc-500">
-        {{ item.label }}
+        {{ $t(item.label) }}
       </a>
       <!-- <div class="flex border rounded-full px-1 py-1 border-primary">
         <button class="px-2 bg-primary rounded-full text-white hover:bg-zinc-700">EN</button>
@@ -64,13 +85,13 @@ export default defineComponent({
           <ChevronDown class="w-4 text-zinc-500" />
         </div>
         <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-40 p-2 shadow">
-          <li><a><span class="text-xs border rounded-full px-2 py-1">EN</span>English</a></li>
-          <li><a><span class="text-xs border rounded-full px-2 py-1">CH</span>中文</a></li>
+          <li><button @click="setLanguage('en')"><span class="text-xs border rounded-full px-2 py-1">EN</span>English</button></li>
+          <li><button @click="setLanguage('ch')"><span class="text-xs border rounded-full px-2 py-1">CH</span>中文</button></li>
         </ul>
       </div>
       
       <button class=" px-4 py-3 bg-primary text-white rounded-lg flex justify-center items-center gap-1 hover:bg-zinc-700">
-        <Download :size="18" /> {{ navItem.downloadBtn }}
+        <Download :size="18" /> {{ $t(downloadBtn) }}
       </button>
     </div>
     

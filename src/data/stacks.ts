@@ -79,14 +79,14 @@ const frontEndStacks: TechStack[] = [
     height: '64px',
     tag: ['previous'],
   },
-  {
-    iconLogo: Redux,
-    name: 'Redux',
-    caption: 'Redux',
-    width: '64px',
-    height: '64px',
-    tag: ['previous'],
-  },
+  // {
+  //   iconLogo: Redux,
+  //   name: 'Redux',
+  //   caption: 'Redux',
+  //   width: '64px',
+  //   height: '64px',
+  //   tag: ['alternative'],
+  // },
   // {
   //   iconLogo: Next,
   //   name: 'NextJS',
