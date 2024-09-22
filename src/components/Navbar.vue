@@ -15,7 +15,20 @@ export default defineComponent({
     return {
       navButton: false as boolean,
       navItem: {
-        navLink: ['Expertise', 'Work', 'Blog'] as string[],
+        navLink: [
+          {
+            label: 'Expertise',
+            url: '#expertise',
+          },
+          {
+            label: 'Work',
+            url: '#work',
+          },
+          {
+            label: 'Blog',
+            url: '#blog'
+          }
+        ],
         downloadBtn: 'Download CV' as string
       }
     }
@@ -30,16 +43,16 @@ export default defineComponent({
 
 <template>
   <nav class="w-full flex justify-between items-center">
-    <a href="" class="z-10 font-londrina-solid text-3xl">VICTOR</a>
+    <a href="#home" class="z-10 font-londrina-solid text-3xl">VICTOR</a>
 
     <div 
       class="absolute left-0 max-md:bg-[#ffffffee] w-full flex flex-col items-center gap-6 pb-4 md:pb-0 md:static md:flex-row md:justify-end transition-all ease-in-out duration-500 lg:space-x-8"
       :class="{ 'top-[-500px]': !navButton, 'top-[76px]': navButton }"
     >
-      <a href="" 
+      <a :href="item.url"
         v-for="item, index in navItem.navLink" :key="index"
         class="hover:text-zinc-500">
-        {{ item }}
+        {{ item.label }}
       </a>
       <!-- <div class="flex border rounded-full px-1 py-1 border-primary">
         <button class="px-2 bg-primary rounded-full text-white hover:bg-zinc-700">EN</button>

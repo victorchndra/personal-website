@@ -1,6 +1,6 @@
 import type { Component } from "vue";
 
-type Tag = "working" | "previous" | "alternative" // add more if needed
+type Tag = "working" | "previous" | "alternative" | 'web3' // add more if needed
 
 export interface TechStack {
   iconLogo: Component,

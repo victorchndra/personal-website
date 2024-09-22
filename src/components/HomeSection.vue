@@ -42,7 +42,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <section class="flex justify-center items-center h-[calc(100vh-76px)] md:h-[calc(100vh-108px)] flex-col gap-5 pb-20 snap-center">
+  <section id="home" class="flex justify-center items-center h-[calc(100vh-76px)] md:h-[calc(100vh-108px)] flex-col gap-5 pb-20 snap-center">
     <p class="text-sm md:text-base lg:text-lg w-72 md:w-full text-center">
       {{ $t('homeSection.headCaption') }}
     </p>

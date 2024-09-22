@@ -12,6 +12,7 @@ export default defineComponent({
       {label: 'Working Stack', isActive: true, tag: 'working'}, 
       {label: 'Previous Stack', isActive: false, tag: 'previous'},
       {label: 'Alternative Stack', isActive: false, tag: 'alternative'},
+      // {label: 'Web3 Stack', isActive: false, tag: 'web3'},
     ])
 
     watchEffect(() => {
@@ -64,7 +65,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <section class="h-[calc(100vh-76px)] md:h-[calc(100vh-108px)] px-5 py-5 flex flex-col gap-5 lg:px-32 snap-center">
+  <section id="expertise" class="h-[calc(100vh-76px)] md:h-[calc(100vh-108px)] px-5 py-5 flex flex-col gap-5 lg:px-32 snap-center">
     <div>
       <h1 class="font-bowlby-one-sc text-xl md:text-2xl pb-2">TECH STACK.</h1>
       <div class="flex justify-center sm:justify-start">

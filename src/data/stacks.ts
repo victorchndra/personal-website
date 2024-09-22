@@ -127,6 +127,14 @@ const frontEndStacks: TechStack[] = [
     height: '64px',
     tag: ['alternative'],
   },
+  {
+    iconLogo: React,
+    name: 'React Native',
+    caption: 'React Native',
+    width: '64px',
+    height: '64px',
+    tag: ['alternative'],
+  },
 ]
 
 const backEndStacks: TechStack[] = [
