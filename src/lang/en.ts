@@ -20,6 +20,8 @@ export default {
   blogSection: {
     title: 'My Blog Space',
     desc: "Come and visit my blog. I'd share my personal insights and thoughts...",
-    visitBtn: 'Visit my blog'
+    visitBtn: 'Visit my blog',
+    comingSoon: '👨‍💻 Coming Soon!',
+    underDevDesc: 'this page is under development ...',
   }
 }

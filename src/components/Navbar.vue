@@ -14,11 +14,11 @@ export default defineComponent({
   },
   setup() {
     const { locale } = useI18n();
-    const { t } = useI18n()
+    // const { t } = useI18n()
 
     const setLanguage = (lang:any) => {
       locale.value = lang
-      localStorage.setItem('lang', lang)
+      // localStorage.setItem('lang', lang)
     }
 
     const navLink = [
@@ -44,12 +44,12 @@ export default defineComponent({
       navButton.value = !navButton.value
     }
     
-    watchEffect(() => {
-      const storedLang = localStorage.getItem('lang');
-      if (storedLang) {
-        locale.value = storedLang;
-      }
-    });
+    // watchEffect(() => {
+    //   const storedLang = localStorage.getItem('lang');
+    //   if (storedLang) {
+    //     locale.value = storedLang;
+    //   }
+    // });
 
     return {
       setLanguage,
@@ -73,7 +73,7 @@ export default defineComponent({
       <a :href="item.url"
         v-for="item, index in navLink" :key="index"
         class="hover:text-zinc-500">
-        {{ $t(item.label) }}
+        <span>{{ $t(item.label) }}</span>
       </a>
       <!-- <div class="flex border rounded-full px-1 py-1 border-primary">
         <button class="px-2 bg-primary rounded-full text-white hover:bg-zinc-700">EN</button>
@@ -84,7 +84,7 @@ export default defineComponent({
           <Languages class="w-4 text-primary"/>
           <ChevronDown class="w-4 text-zinc-500" />
         </div>
-        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-40 p-2 shadow">
+        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-40 p-2 shadow bg-white">
           <li><button @click="setLanguage('en')"><span class="text-xs border rounded-full px-2 py-1">EN</span>English</button></li>
           <li><button @click="setLanguage('ch')"><span class="text-xs border rounded-full px-2 py-1">CH</span>中文</button></li>
         </ul>

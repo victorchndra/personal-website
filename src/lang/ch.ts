@@ -20,6 +20,8 @@ export default {
   blogSection: {
     title: '我的博客空间',
     desc: "来访问我的博客吧。我会分享我的个人见解和想法...",
-    visitBtn: '访问我的博客'
+    visitBtn: '访问我的博客',
+    comingSoon: '👨‍💻 即将推出！',
+    underDevDesc: '此页面正在开发中...',
   }
 }

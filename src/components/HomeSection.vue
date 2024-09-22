@@ -4,7 +4,7 @@ import Media from '../types/Media';
 import Github from '../assets/icons/Github.vue';
 import LinkedIn from '../assets/icons/LinkedIn.vue';
 import Instagram from '../assets/icons/Instagram.vue';
-import { useI18n } from 'vue-i18n';
+// import { useI18n } from 'vue-i18n';
 
 export default defineComponent({
   name: 'HomeSection',

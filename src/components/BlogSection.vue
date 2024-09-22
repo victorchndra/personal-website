@@ -19,12 +19,12 @@ export default defineComponent({
     
     <!-- Modal -->
     <dialog id="comingSoon" class="modal">
-      <div class="modal-box">
+      <div class="modal-box bg-white">
         <form method="dialog">
           <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
         </form>
-        <h3 class="text-lg font-bold">👨‍💻 Coming Soon!</h3>
-        <p class="py-4">This page is under development ...</p>
+        <h3 class="text-lg font-bold">{{ $t('blogSection.comingSoon') }}</h3>
+        <p class="py-4">{{ $t('blogSection.underDevDesc') }}</p>
       </div>
     </dialog>
   </section>

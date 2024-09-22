@@ -46,30 +46,6 @@ export default defineComponent({
               <p class="text-sm lg:text-base text-zinc-600">{{ project.desc }}.</p>
             </a>
           </li>
-
-          <!-- <a href="" class="border rounded-xl min-h-24 px-6 py-4 w-80 lg:w-96 flex flex-col hover:cursor-pointer hover:shadow-md transition-all duration-200 ease-in-out">
-            <div class="flex justify-between items-center hover:text-zinc-500">
-              <h2 class="font-bold uppercase text-sm lg:text-base">Project 2</h2>
-              <span>»</span>
-            </div>
-            <p class="text-sm lg:text-base text-zinc-600">this is description for project 2.</p>
-          </a>
-
-          <a href="" class="border rounded-xl min-h-24 px-6 py-4 w-80 lg:w-96 flex flex-col hover:cursor-pointer hover:shadow-md transition-all duration-200 ease-in-out">
-            <div class="flex justify-between items-center hover:text-zinc-500">
-              <h2 class="font-bold uppercase text-sm lg:text-base">Project 3</h2>
-              <span>»</span>
-            </div>
-            <p class="text-sm lg:text-base text-zinc-600">this is description for project 3.</p>
-          </a>
-
-          <a href="" class="border rounded-xl min-h-24 px-6 py-4 w-80 lg:w-96 flex flex-col hover:cursor-pointer hover:shadow-md transition-all duration-200 ease-in-out">
-            <div class="flex justify-between items-center hover:text-zinc-500">
-              <h2 class="font-bold uppercase text-sm lg:text-base">Project 4</h2>
-              <span>»</span>
-            </div>
-            <p class="text-sm lg:text-base text-zinc-600">this is description for project 4.</p>
-          </a> -->
         </ul>
       </div>
 

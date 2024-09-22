@@ -72,7 +72,7 @@ export default defineComponent({
       <div class="flex justify-center sm:justify-start">
         <ul class="flex text-xs px-2 py-2 bg-primary rounded-3xl overflow-x-auto max-w-max no-scrollbar">
           <li v-for="orderBy in orderList" :key="orderBy.label" class="text-white px-4 py-1 whitespace-nowrap relative hover:cursor-pointer" @click="handleOrderSelected(orderBy)" ref="listItem">
-            <span class="z-[1] relative" :class="orderBy.isActive && 'text-primary'">{{ $t(orderBy.label) }}</span>
+            <span class="z-[1] relative" :class="orderBy.isActive ? 'text-primary' : 'text-white'">{{ $t(orderBy.label) }}</span>
             <div class="indicator" v-if="orderBy.isActive" :style="{ transform: `translateX(${indicatorPosition}px)`}"></div>
           </li>
         </ul>

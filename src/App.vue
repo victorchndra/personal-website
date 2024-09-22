@@ -21,7 +21,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class=" min-h-screen">
+  <div class=" min-h-screen bg-white text-primary">
     <header class=" bg-[#FFFFFF90] px-5 py-5 lg:pt-10 lg:px-32 sticky top-0 backdrop-filter backdrop-blur-md">
       <Navbar />
     </header>
